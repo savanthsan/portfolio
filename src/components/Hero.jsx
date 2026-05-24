@@ -31,7 +31,7 @@ export default function Hero() {
           </span>
 
           {/* Heading with shimmering white-to-blue gradient */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none">
             Hi, I'm{" "}
             <span className="gradient-text-blue font-black tracking-tight select-none">
               {personalInfo.name}
@@ -39,12 +39,12 @@ export default function Hero() {
           </h1>
 
           {/* Title */}
-          <p className="text-lg sm:text-xl font-medium text-slate-200">
+          <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-200">
             {personalInfo.title}
           </p>
 
           {/* Short Description */}
-          <p className="text-base text-slate-400 max-w-xl leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
             {personalInfo.shortDescription}
           </p>
 

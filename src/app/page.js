@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Education from "@/components/Education";
@@ -15,9 +14,6 @@ export default function Home() {
     <>
       {/* Interactive Cursor Spotlight Background */}
       <SpotlightBg />
-
-      {/* Navigation Menu Header */}
-      <Navbar />
 
       {/* Main Page Layout Sections */}
       <main className="flex flex-col flex-1 w-full min-h-screen relative z-10">
