@@ -63,12 +63,12 @@ export const portfolioConfig = {
     },
     {
       id: 4,
-      name: "Cloud Motion Prediction System",
-      description: "A satellite imagery based AI/ML project idea focused on predicting cloud motion using INSAT satellite data and advanced models.",
-      tech: ["Python", "AI/ML"],
-      category: "AI / ML Research",
-      link: "#",
-      demoLink: "#"
+      name: "CloudCast India",
+      description: "A beginner-friendly, full-stack AI cloud motion prediction web application. It calculates cloud movements and predicts the next satellite frame using OpenCV Dense Optical Flow (Farneback method) on geostationary weather imagery from India's meteorological satellites (INSAT-3D/3DR).",
+      tech: ["Next.js", "FastAPI", "OpenCV", "Python", "SQLite", "Tailwind CSS"],
+      category: "Fullstack / AI",
+      link: "https://github.com/savanthsan/CloudCast-India",
+      demoLink: "https://cloud-cast-india.vercel.app/"
     }
   ],
   currentlyLearning: [
