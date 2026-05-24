@@ -89,5 +89,14 @@ export const portfolioConfig = {
     
     // 💡 INSERT YOUR LINKEDIN URL HERE
     linkedin: "https://linkedin.com/in/savanthsanju"
-  }
+  },
+  achievements: [
+    {
+      id: 1,
+      title: "Youth Ideathon 2024 – Top 100 Finalist",
+      provider: "Youth Ideathon / ThinkStartup",
+      description: "Selected among the Top 100 participants/teams in Youth Ideathon for presenting an innovative idea and solution.",
+      certificateLink: "https://portal.itscredible.com/qr/346591335906?src=qr"
+    }
+  ]
 };
