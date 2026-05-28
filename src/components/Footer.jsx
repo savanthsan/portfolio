@@ -15,29 +15,33 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={ref} className="border-t border-slate-900 bg-[#02000f]/80 relative z-10 py-12">
+    <footer ref={ref} className="border-t-3 border-[#0F172A] bg-white relative z-10 py-12">
       <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll ${isVisible ? "active" : ""}`}>
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Logo Brand */}
           <div className="flex items-center gap-2">
-            <Code2 className="w-5 h-5 text-purple-500" />
-            <span className="font-bold text-slate-350 text-sm">Savanth Sanju</span>
+            <div className="p-1 bg-[#00BD7D] border-2 border-[#0F172A] rounded-sm">
+              <Code2 className="w-4 h-4 text-[#0F172A]" />
+            </div>
+            <span className="font-display font-extrabold uppercase tracking-wider text-[#0F172A] text-sm">
+              Savanth Sanju
+            </span>
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-slate-500 font-medium">
-            <a href="#about" className="hover:text-purple-400 transition-colors">About</a>
-            <a href="#education" className="hover:text-purple-400 transition-colors">Education</a>
-            <a href="#skills" className="hover:text-purple-400 transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-purple-400 transition-colors">Projects</a>
-            <a href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-mono font-bold uppercase tracking-wider">
+            <a href="#about" className="text-[#4B5563] hover:text-[#00BD7D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BD7D] rounded px-1">About</a>
+            <a href="#education" className="text-[#4B5563] hover:text-[#00BD7D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BD7D] rounded px-1">Education</a>
+            <a href="#skills" className="text-[#4B5563] hover:text-[#00BD7D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BD7D] rounded px-1">Skills</a>
+            <a href="#projects" className="text-[#4B5563] hover:text-[#00BD7D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BD7D] rounded px-1">Projects</a>
+            <a href="#contact" className="text-[#4B5563] hover:text-[#00BD7D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BD7D] rounded px-1">Contact</a>
           </div>
 
           {/* Scroll to Top */}
           <button
             onClick={handleScrollToTop}
-            className="p-2.5 rounded-full border border-slate-800 bg-slate-900/40 text-slate-400 hover:text-purple-400 hover:border-purple-500/30 transition-all duration-200"
+            className="p-3 rounded border-2 border-[#0F172A] bg-white text-[#0F172A] hover:bg-[#00BD7D] shadow-[2.5px_2.5px_0px_0px_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0 active:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BD7D] focus-visible:ring-offset-2 transition-all duration-150 cursor-pointer"
             aria-label="Scroll back to top of page"
           >
             <ArrowUp className="w-4 h-4" />
@@ -45,12 +49,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="mt-8 pt-8 border-t border-slate-900/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 font-normal">
+        <div className="mt-8 pt-8 border-t-2 border-[#0F172A]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono font-bold text-[#4B5563] uppercase tracking-wider">
           <p>© {currentYear} {personalInfo.name}. All rights reserved.</p>
-          <p>
+          <p className="normal-case font-sans font-medium text-slate-500">
             Designed & Built with{" "}
-            <span className="text-purple-500/80">Next.js</span> &{" "}
-            <span className="text-purple-500/80">Tailwind</span>
+            <span className="font-bold text-[#0F172A] hover:text-[#00BD7D] transition-colors">Next.js</span> &{" "}
+            <span className="font-bold text-[#0F172A] hover:text-[#00BD7D] transition-colors">Tailwind</span>
           </p>
         </div>
       </div>

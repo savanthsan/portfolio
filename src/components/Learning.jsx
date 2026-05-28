@@ -8,43 +8,50 @@ export default function Learning() {
   const { currentlyLearning } = portfolioConfig;
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.05 });
 
-  // Map levels to color gradients
+  // Map levels to color classes and segmented steps
   const getLevelStyles = (level) => {
     switch (level) {
       case "Advanced":
         return {
-          bg: "bg-cyan-500/10 border-cyan-500/20 text-cyan-300",
-          progress: "w-4/5 bg-gradient-to-r from-cyan-500 to-blue-500",
+          badgeClass: "bg-[#00BD7D] text-[#0F172A] border-2 border-[#0F172A] shadow-[1.5px_1.5px_0px_0px_#0F172A]",
+          steps: 4,
           stars: 4
         };
       case "Intermediate":
         return {
-          bg: "bg-blue-500/10 border-blue-500/20 text-blue-350",
-          progress: "w-3/5 bg-gradient-to-r from-blue-500 to-indigo-500",
+          badgeClass: "bg-white text-[#0F172A] border-2 border-[#0F172A] shadow-[1.5px_1.5px_0px_0px_#00BD7D]",
+          steps: 3,
           stars: 3
         };
       case "Beginner":
       default:
         return {
-          bg: "bg-indigo-500/10 border-indigo-500/20 text-indigo-300",
-          progress: "w-2/5 bg-gradient-to-r from-indigo-500 to-cyan-500",
+          badgeClass: "bg-[#F8FAFC] text-[#4B5563] border-2 border-slate-200 shadow-[1px_1px_0px_0px_rgba(15,23,42,0.05)]",
+          steps: 2,
           stars: 2
         };
     }
   };
 
+  const totalSteps = 5;
+
   return (
-    <section id="learning" ref={ref} className="py-20 relative overflow-hidden">
+    <section id="learning" ref={ref} className="py-24 relative overflow-hidden bg-white">
+      {/* Background grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F0_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F0_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 pointer-events-none" />
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
-        <div className={`text-center mb-12 reveal-on-scroll ${isVisible ? "active" : ""}`}>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl flex items-center justify-center gap-2">
-            <BookOpen className="w-8 h-8 text-blue-400" />
+        <div className={`text-center mb-16 reveal-on-scroll ${isVisible ? "active" : ""}`}>
+          <h2 className="text-3xl font-display uppercase tracking-wider font-extrabold text-[#0F172A] flex items-center justify-center gap-3">
+            <div className="p-1.5 bg-[#00BD7D] border-2 border-[#0F172A] rounded">
+              <BookOpen className="w-6 h-6 text-[#0F172A]" />
+            </div>
             <span>Currently Learning</span>
           </h2>
-          <div className="mt-2 w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
-          <p className="text-slate-400 text-sm mt-3 max-w-lg mx-auto">
+          <div className="mt-3 w-20 h-1.5 bg-[#00BD7D] border-2 border-[#0F172A] mx-auto rounded shadow-[2px_2px_0px_0px_#0F172A]" />
+          <p className="text-[#4B5563] text-sm mt-4 max-w-lg mx-auto font-medium">
             Stack expansion! Technologies I am currently diving deeper into or exploring for full-stack AI applications.
           </p>
         </div>
@@ -57,34 +64,48 @@ export default function Learning() {
               <div
                 key={tech.name}
                 style={{ transitionDelay: `${index * 80}ms` }}
-                className={`glass-card p-6 rounded-2xl border border-blue-500/10 bg-slate-950/40 hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between reveal-on-scroll ${
+                className={`isometric-slab p-6 rounded border-2 border-[#0F172A] bg-white hover:border-[#0F172A] flex flex-col justify-between reveal-on-scroll ${
                   isVisible ? "active" : ""
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`text-[10px] font-mono tracking-wider font-semibold border px-2 py-0.5 rounded uppercase ${styles.bg}`}>
+                    <span className={`text-[10px] font-mono font-bold tracking-wider px-2 py-0.5 rounded uppercase ${styles.badgeClass}`}>
                       {tech.level}
                     </span>
-                    <div className="flex gap-0.5 text-yellow-500/70">
+                    <div className="flex gap-0.5 text-yellow-500">
                       {Array.from({ length: styles.stars }).map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-yellow-500/30" />
+                        <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
                       ))}
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-200 mb-6">
+                  <h3 className="text-lg font-display font-extrabold uppercase tracking-wide text-[#0F172A] mb-8 mt-2">
                     {tech.name}
                   </h3>
                 </div>
 
                 <div>
-                  <div className="flex justify-between items-center text-xs text-slate-500 mb-1.5 font-medium">
-                    <span>Progress Tracker</span>
-                    <span>{tech.level === "Advanced" ? "80%" : tech.level === "Intermediate" ? "60%" : "40%"}</span>
+                  <div className="flex justify-between items-center text-xs font-mono font-bold text-[#4B5563] uppercase tracking-wider mb-2">
+                    <span>Progress Steps</span>
+                    <span>{styles.steps} / {totalSteps}</span>
                   </div>
-                  <div className="w-full h-1.5 rounded-full bg-slate-900 border border-slate-800 overflow-hidden">
-                    <div className={`h-full rounded-full ${styles.progress}`} />
+                  
+                  {/* Segmented stepped indicator (tactile realism style) */}
+                  <div className="flex gap-1.5">
+                    {Array.from({ length: totalSteps }).map((_, i) => {
+                      const isFilled = i < styles.steps;
+                      return (
+                        <div
+                          key={i}
+                          className={`h-3.5 flex-1 border-2 border-[#0F172A] transition-colors rounded-sm ${
+                            isFilled 
+                              ? "bg-[#00BD7D] shadow-[1px_1px_0px_0px_#0F172A]" 
+                              : "bg-[#F8FAFC]"
+                          }`}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               </div>

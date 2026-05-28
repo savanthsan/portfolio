@@ -37,7 +37,7 @@ export default function SpotlightBg() {
         className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-500 ease-out"
         style={{
           opacity: isVisible ? 1 : 0,
-          background: `radial-gradient(550px circle at ${mousePos.x}px ${mousePos.y}px, rgba(59, 130, 246, 0.07), transparent 80%)`,
+          background: `radial-gradient(550px circle at ${mousePos.x}px ${mousePos.y}px, rgba(0, 189, 125, 0.06), transparent 80%)`,
         }}
       />
     </>

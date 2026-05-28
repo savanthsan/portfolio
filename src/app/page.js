@@ -8,12 +8,16 @@ import Learning from "@/components/Learning";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SpotlightBg from "@/components/SpotlightBg";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <>
       {/* Interactive Cursor Spotlight Background */}
       <SpotlightBg />
+
+      {/* Main Navigation */}
+      <Navbar />
 
       {/* Main Page Layout Sections */}
       <main className="flex flex-col flex-1 w-full min-h-screen relative z-10">

@@ -1,14 +1,22 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Oswald, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata = {
@@ -20,11 +28,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
+      className={`${poppins.variable} ${oswald.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
-      <body className="bg-[#030014] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-purple-500/30 selection:text-purple-200">
+      <body className="bg-[#F8FAFC] text-[#111827] font-sans antialiased overflow-x-hidden selection:bg-[#00BD7D]/30 selection:text-[#0F172A]">
         {children}
       </body>
     </html>
   );
 }
+

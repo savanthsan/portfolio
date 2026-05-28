@@ -40,7 +40,7 @@ export const portfolioConfig = {
       description: "An AI planner and expense tracking website that helps users manage tasks, track spending, get reminders, and receive smart productivity and money advice.",
       tech: ["Next.js", "Supabase", "Tailwind CSS", "AI API"],
       category: "Fullstack / AI",
-      link: "https://github.com/savanthsan/savan-tracker.git",
+      link: "https://github.com/savanthsan/savan-tracker",
       demoLink: "https://savan-tracker.vercel.app/"
     },
     {
@@ -49,7 +49,7 @@ export const portfolioConfig = {
       description: "An Apache server-hosted RDBMS system for airline flight scheduling, passenger booking administration, and database record management.",
       tech: ["PHP", "MySQL", "Apache", "RDBMS"],
       category: "Fullstack / AI",
-      link: "https://github.com/savanthsan/Airline.git",
+      link: "https://github.com/savanthsan/Airline",
       demoLink: "#"
     },
     {
@@ -58,7 +58,7 @@ export const portfolioConfig = {
       description: "An elegant e-commerce jewelry showcase website featuring product categories, shopping cart systems, and responsive design styles.",
       tech: ["HTML", "CSS", "JavaScript"],
       category: "Frontend Dev",
-      link: "https://github.com/savanthsan/saga.git",
+      link: "https://github.com/savanthsan/saga",
       demoLink: "#"
     },
     {

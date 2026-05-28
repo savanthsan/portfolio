@@ -11,53 +11,54 @@ export default function Achievements() {
   if (!achievements || achievements.length === 0) return null;
 
   return (
-    <section id="achievements" ref={ref} className="py-20 relative overflow-hidden bg-grid-pattern/30">
-      
-      {/* Background Glow Orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] glow-orb-purple animate-pulse-slow rounded-full pointer-events-none" />
+    <section id="achievements" ref={ref} className="py-24 relative overflow-hidden bg-white">
+      {/* Background grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F0_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F0_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
-        <div className={`text-center mb-12 reveal-on-scroll ${isVisible ? "active" : ""}`}>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl flex items-center justify-center gap-2">
-            <Trophy className="w-8 h-8 text-blue-400" />
+        <div className={`text-center mb-16 reveal-on-scroll ${isVisible ? "active" : ""}`}>
+          <h2 className="text-3xl font-display uppercase tracking-wider font-extrabold text-[#0F172A] flex items-center justify-center gap-3">
+            <div className="p-1.5 bg-[#00BD7D] border-2 border-[#0F172A] rounded">
+              <Trophy className="w-6 h-6 text-[#0F172A]" />
+            </div>
             <span>Achievements & Certifications</span>
           </h2>
-          <div className="mt-2 w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
-          <p className="text-slate-400 text-sm mt-3 max-w-lg mx-auto">
+          <div className="mt-3 w-20 h-1.5 bg-[#00BD7D] border-2 border-[#0F172A] mx-auto rounded shadow-[2px_2px_0px_0px_#0F172A]" />
+          <p className="text-[#4B5563] text-sm mt-4 max-w-lg mx-auto font-medium">
             A showcase of recognized honors, certifications, and technical accomplishments.
           </p>
         </div>
 
         {/* Achievements List */}
-        <div className="flex flex-col items-center max-w-3xl mx-auto gap-6">
+        <div className="flex flex-col items-center max-w-3xl mx-auto gap-8 w-full">
           {achievements.map((achievement, index) => (
             <div
               key={achievement.id}
               style={{ transitionDelay: `${index * 120}ms` }}
-              className={`glass-card p-6 sm:p-8 rounded-2xl border border-blue-500/10 bg-slate-950/40 w-full hover:border-blue-500/30 transition-all duration-300 relative group reveal-on-scroll ${
+              className={`isometric-slab p-6 sm:p-8 rounded border-2 border-[#0F172A] bg-white w-full relative group reveal-on-scroll ${
                 isVisible ? "active" : ""
               }`}
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div className="flex items-start gap-4">
                   {/* Badge/Trophy Icon */}
-                  <div className="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/25 text-blue-400 group-hover:text-blue-300 transition-colors shrink-0">
-                    <Award className="w-7 h-7" />
+                  <div className="p-3 rounded border-2 border-[#0F172A] bg-[#00BD7D]/10 text-[#0F172A] group-hover:bg-[#00BD7D] shrink-0 transition-colors shadow-[2.5px_2.5px_0px_0px_#0F172A]">
+                    <Award className="w-6 h-6" />
                   </div>
                   
                   <div>
                     {/* Provider */}
-                    <span className="text-[10px] font-mono tracking-wider text-blue-400 font-semibold bg-blue-500/5 px-2.5 py-1 rounded border border-blue-500/15">
+                    <span className="inline-block text-[10px] font-mono font-bold tracking-wider text-[#0F172A] bg-[#F1F5F9] px-2.5 py-1 rounded border-2 border-[#0F172A] shadow-[1.5px_1.5px_0px_0px_#00BD7D]">
                       {achievement.provider}
                     </span>
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-slate-100 group-hover:text-blue-350 transition-colors mt-2.5">
+                    <h3 className="text-xl font-display font-extrabold uppercase tracking-wide text-[#0F172A] group-hover:text-[#00BD7D] transition-colors mt-3">
                       {achievement.title}
                     </h3>
                     {/* Description */}
-                    <p className="text-slate-400 text-sm mt-2 leading-relaxed max-w-xl">
+                    <p className="text-[#4B5563] text-sm mt-2 leading-relaxed max-w-xl font-medium">
                       {achievement.description}
                     </p>
                   </div>
@@ -69,10 +70,10 @@ export default function Achievements() {
                     href={achievement.certificateLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-700 hover:border-blue-500/50 bg-slate-900/40 hover:bg-purple-950/10 text-slate-200 hover:text-blue-300 font-semibold transition-all duration-200 shrink-0 text-sm self-start md:self-center"
+                    className="flex items-center justify-center gap-2 px-5 py-3 rounded border-2 border-[#0F172A] bg-white text-[#0F172A] font-mono text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_0px_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0px_0px_#0F172A] active:translate-x-0 active:translate-y-0 active:shadow-[1px_1px_0px_0px_#0F172A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BD7D] focus-visible:ring-offset-2 shrink-0 self-start md:self-center transition-all duration-150"
                   >
                     <span>View Certificate</span>
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
               </div>
