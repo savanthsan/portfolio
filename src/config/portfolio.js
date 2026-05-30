@@ -41,7 +41,7 @@ export const portfolioConfig = {
       tech: ["Next.js", "Supabase", "Tailwind CSS", "AI API"],
       category: "Fullstack / AI",
       link: "https://github.com/savanthsan/savan-tracker",
-      demoLink: "https://spiffy-cocada-82359b.netlify.app/"
+      demoLink: "https://savan-tracker-1.onrender.com/"
     },
     {
       id: 2,
