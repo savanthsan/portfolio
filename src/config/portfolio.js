@@ -55,11 +55,11 @@ export const portfolioConfig = {
     {
       id: 3,
       name: "Saga Jewellery Website",
-      description: "An elegant e-commerce jewelry showcase website featuring product categories, shopping cart systems, and responsive design styles.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      category: "Frontend Dev",
+      description: "An elegant e-commerce jewelry store built with React, Tailwind CSS, Firebase, and Shopify Buy SDK, featuring dynamic product catalogs and a seamless shopping cart experience.",
+      tech: ["React", "Tailwind CSS", "Firebase", "Shopify", "Vite"],
+      category: "Fullstack / Ecommerce",
       link: "https://github.com/savanthsan/saga",
-      demoLink: "#"
+      demoLink: "https://shopsaga.store"
     },
     {
       id: 4,
